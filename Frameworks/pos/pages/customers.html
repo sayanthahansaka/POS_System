@@ -61,13 +61,13 @@
     <h1 class="ms-5 position-relative" style="bottom: 3px; left: 10px;">CUSTOMERS</h1>
     <section class="row">
         <div class="col-sm-12 col-12 col-lg-5 mt-5 col-xl-4">
-            <h4>Customer ID</h4>
+            <h4>Customer ID</h4> <input id="txtCustomerId" type="text">
             <br>
-            <h4>Customer Name</h4>
+            <h4>Customer Name</h4> <input id="txtCustomerName" type="text">
             <br>
-            <h4>Customer Address</h4>
+            <h4>Customer Address</h4> <input id="txtCustomerAddress" type="text">
             <br>
-            <h4>Customer Salary</h4>
+            <h4>Customer Salary</h4> <input id="txtCustomerSalary" type="text">
 
 
             <div class="form-floating input-group mt-1 mb-3 col-10">
@@ -75,7 +75,7 @@
 <!--                <label for="floatingInput">Customer Name/NIC/Code</label>-->
 <!--                <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button" id="button-addon2" style="background-color: deepskyblue">Get All-->
 <!--                </button>-->
-                <button type="button" class="btn btn-success me-2">Save</button>
+                <button type="button" id="btnCustAdd" class="btn btn-success me-2">Save</button>
                 <button type="button" class="btn btn-info me-2">Get All</button>
                 <button type="button" class="btn btn-danger  me-2">Delete</button>
                 <button type="button" class="btn btn-warning me-2">Update</button>
@@ -188,7 +188,25 @@
         </div>
     </section>
 </main>
-<script src="../../../assets/js/bootstrap.min.js"></script>
 
+<script src="../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../assets/lib/jQuery/jquery-3.6.4.min.js"></script>
+<script>
+
+    $("btnCustAdd").click(function (){
+        let customerID = $("#txtCustomerId").val();
+        let customerName = $("#txtCustomerName").val();
+        let customerAddress = $("#txtCustomerAddress").val();
+        let customerSalary = $("#txtCustomerSalary").val();
+    });
+
+    var customerObject = {
+        id:customerID,
+        name:customerName,
+        address:customerAddress,
+        salary:customerSalary
+    }
+    console.log(customerObject);
+</script>
 </body>
 </html>
